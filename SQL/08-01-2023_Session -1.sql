@@ -19,5 +19,29 @@ WHERE
 AND trunc(date_of_transaction) > '01-JAN-1986';
 
 ---------------------------------------
+-- The Relationship of a database and SQL
+---------------------------------------
+
+-- DDL : Data Defination Language
+            CREATE TABLE
+            DROP TABLE
+            ALTER TABLE
+            TRUNCATE TABLE
+-- DML : Data Manipulation Language
+            UPDATE
+            INSERT
+            MERGE
+            DELETE
+            SELECT
+-- DCL : Data Control Language
+            privilages,roles,grants
+-- TCL : Transaction Control Language
+            COMMIT
+            ROLLBACK
+            SAVEPOINT
+            SET TRANSACTION
+-------------------------------------------------
+
+
 
 
