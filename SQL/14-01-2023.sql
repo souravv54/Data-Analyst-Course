@@ -101,3 +101,45 @@ SELECT CASE
        END AS myoptions
 FROM dual;
 
+---------------------------------------------------
+-- NVL and NVL2 and coalesce ( NULL FUNCTIONS )
+define;
+
+UNDEFINE &MYOPTION;
+
+SELECT CASE
+           WHEN '&myOption1' IS NOT NULL THEN
+               'IS NOT NULL'
+           ELSE
+               'IS NULL'
+       END AS myanswer
+FROM dual;
+
+--- How to handle null values using NVL , it takes 2 arguements
+-- SYNTAX: -  NVL (value is null, then print this value)
+
+SELECT nvl('&myOption1', 'NO Option') AS myoptions
+FROM dual;
+
+--NVL 2 Takes 3 aruguement
+--SYNTX : - NVL2(input, IF NOT NULL, IF NULL)
+
+SELECT nvl2('&myfirstoption', 'IS NOT NULL', 'IS NULL') AS myoptions
+FROM dual;
+
+-- Coalesce can take n number of arguements
+-- SNYTAX:- COALESCE(input1, input2, input3.....,'IF all are NULL') 
+
+SELECT coalesce('&myfirstoption', '&mysecondoption', 'NO OPTION') AS myoptions
+FROM dual;
+
+-- Differnece between NVL and COALESCE is COALESCE required same datatype over functions.
+
+SELECT coalesce('ABC', 1)
+FROM dual; -- give errror due to inconsistent data types
+SELECT nvl('ABC', 1)
+FROM dual; -- NO ERROR
+
+SELECT nvl(NULL, NULL) AS myanswer
+FROM dual; -- it will also work.
+------------------------------------------------------
