@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> MY FIRST WEBPAGE</title>
+	</head>
+	
+	<body> 
+		<p align= "center">This is not the webpage you are looking for , Move along,move along! </p>
+		<button> Don't click me </button>
+		
+		<a href = "https://www.youtube.com/watch?v=nS0oKBbNjWY&t=129s">
+			Click here for high quality music
+		</a>
+		
+		<a href = "https://www.youtube.com/watch?v=nS0oKBbNjWY&t=129s" target = "_blank">
+			Click here for high quality music in new tab.
+			
+		</a>
+	</body>
+
+</html>
