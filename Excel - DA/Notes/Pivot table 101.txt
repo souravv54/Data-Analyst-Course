@@ -1,0 +1,14 @@
+What is Pivot table ?
+A - Pivot tables allows you to easily organize,filter,summarize and analyze raw data.
+
+**** KEY BENIFITS*****
+1. Powerful - Uncover insights and answer key questions about your data
+
+2. Beautiful - Apply custom styles and conditional formatting rules to bring your pivots to life
+
+3. Fast - Create custom views,filters,and calculated fields on the fly
+
+4. Accurate - Automate calculations to minimize human error
+
+5. Flexible - Manipulate table layouts and create dynamic views in seconds.
+
