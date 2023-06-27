@@ -58,4 +58,59 @@ Alter table C##sourav.tbl_employee
 Drop unused columns ; --- we can drop USER table but not the SYS table.
 
 ------------------------
+-- Multiple table insertions
+-----------------------
 
+Select * from tbl_employee;
+
+Create table tbl_employee_team1 as 
+select * from tbl_employee where 1 = 0 ;
+
+Create table tbl_employee_team2 as 
+select * from tbl_employee where 1 = 0 ;
+
+select * from tbl_employee_team1;
+select * from tbl_employee_team2;
+
+truncate table tbl_employee_team1;
+truncate table tbl_employee_team2;
+
+INSERT ALL
+    INTO tbl_employee_team1
+    INTO tbl_employee_team2
+select * from tbl_employee;
+
+select * from tbl_employee_team1;
+select * from tbl_employee_team2;
+
+truncate table tbl_employee_team1;
+truncate table tbl_employee_team2;
+
+INSERT ALL
+     WHEN MOD(employee_number,3) = 0 then
+        INTO tbl_employee_team1
+    WHEN MOD(employee_number,4) = 0 then
+        INTO tbl_employee_team2 
+select * from tbl_employee;
+
+select * from tbl_employee_team1;
+select * from tbl_employee_team2;
+
+truncate table tbl_employee_team1;
+truncate table tbl_employee_team2;
+
+select * from tbl_employee_team1
+INTERSECT
+select * from tbl_employee_team2;
+
+INSERT FIRST
+     WHEN MOD(employee_number,3) = 0 then
+        INTO tbl_employee_team1
+    WHEN MOD(employee_number,4) = 0 then
+        INTO tbl_employee_team2 
+select * from tbl_employee;
+
+
+select * from tbl_employee_team1
+INTERSECT
+select * from tbl_employee_team2;
